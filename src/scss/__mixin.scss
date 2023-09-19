@@ -1,69 +1,47 @@
-@mixin adaptiv-font($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $maxWidth: $maxWidth - 320;
-  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
-
-  @media (min-width: calc(#{$maxWidth + px} + 320px)) {
-    font-size: $pcSize + px;
-  }
-	@media (max-width: #{$minWidth + px}) {
-    font-size: $mobSize + px;
-  }
-}
-
-@function toRem($value) {
-	$result: calc($value / 16);
-	
-	@return $result + rem;
-}
-
-// @function em($size) {
-// 	$result: $size / 16 * $fontSizeMain;
-	
-// 	@return $result + em;
-// }
-
-// @function em($size) {
-// 	$result: $size / $fontSizeMain;
-	
-// 	@return $result + em;
-// }
-
-// @mixin toRem($fontSize) {
-// 	font-size: calc($fontSize / 16);
-// }
-// @mixin adaptiv-mp($pcSize, $mobSize, $value) {
+// @mixin adaptiv-font($pcSize, $mobSize) {
 //   $addSize: $pcSize - $mobSize;
-//   $maxWidth: $maxWidth - 320;
-//   #{$value}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+//   $maxWidth: $maxWidth - $minWidth;
+//   font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - $minWidth + px) / #{$maxWidth}));
 
-//   @media (min-width: #{$maxWidth + 320px}) {
-//     #{$value}: #{$pcSize + px};
+//   @media (min-width: calc(#{$maxWidth + px} + $minWidth + px)) {
+//     font-size: $pcSize + px;
 //   }
 // 	@media (max-width: #{$minWidth + px}) {
-//     #{$value}: #{$mobSize + px};
+//     font-size: $mobSize + px;
 //   }
 // }
-// // Для начала c определённой МАКСИМАЛЬНОЙ ширинs экрана в меньшую сторону
-// @mixin adaptiv-mpMAX($pcSize, $mobSize, $value, $maxW) {
-//   $addSize: $pcSize - $mobSize;
-//   $maxWidth: $maxW;
-//   #{$value}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / (#{$maxW} - 320)));
 
-//   @media (min-width: #{$maxW + px}) {
-//     #{$value}: #{$pcSize + px};
-//   }
-// }
-// // Для остановки на определённой МИНИМАЛЬНОЙ ширине экрана
-// @mixin adaptiv-mpMIN($pcSize, $mobSize, $value, $minW) {
-//   $addSize: $pcSize - $mobSize;
-//   $maxWidth: $maxWidth - 320;
-//   #{$value}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minW + px}) / (#{$maxWidth} - #{$minW} + 320)));
+/* 
+	$maxW - ширина экрана с которой начинается изменение $value в меньшую сторону экрана до $minWidth (задана в var.scss)
+	$minW - ширина экрана на которой изменение $value прекращается на значении $mobSize
+*/
+@mixin adaptiv-mp($pcSize, $mobSize, $value, $maxW: null, $minW: null, $metrik: px) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - $minWidth;
 
-//   @media (min-width: #{$maxWidth + 320px}) {
-//     #{$value}: #{$pcSize + px};
-//   }
-//   @media (max-width: #{$minWidth + px}) {
-//     #{$value}: #{$mobSize + px};
-//   }
-// }
+	@if ($minW) {
+		#{$value}: calc(#{$mobSize + $metrik} + #{$addSize} * ((100vw - #{$minW + $metrik}) / (#{$maxWidth} - #{$minW} + 320)));
+	} @else {
+		#{$value}: calc(#{$mobSize + $metrik} + #{$addSize} * ((100vw - #{$minWidth + $metrik}) / #{$maxWidth}));
+	}
+
+	@if ($maxW) {
+		@media (min-width: #{$maxW + $metrik}) {
+			#{$value}: #{$pcSize + $metrik};
+		}
+	} @else {
+		@media (min-width: #{calc($maxWidth + $minWidth) + $metrik}) {
+			#{$value}: #{$pcSize + $metrik};
+		}
+	}
+
+	@if ($minW) {
+		@media (max-width: #{$minW + $metrik}) {
+			#{$value}: #{$mobSize + $metrik};
+		}
+	} @else {
+		@media (max-width: #{$minWidth + $metrik}) {
+			#{$value}: #{$mobSize + $metrik};
+		}
+	}
+}

@@ -14,14 +14,14 @@
 	}
 	// .block-header__title
 	&__title {
-		@include adaptiv-font(52, 24);
+		@include adaptiv-mp(52, 24, 'font-size');
 		color: $darkColor;
 		font-weight: 700;
 		line-height: 1.23;
 		
 		// .block-header__title--big
 		&--big {
-			@include adaptiv-font(64, 32);
+			@include adaptiv-mp(64, 32, 'font-size');
 		}
 		// .block-header__title--white
 		&--white {

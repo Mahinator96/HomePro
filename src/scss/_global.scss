@@ -9,10 +9,11 @@ body{
 	display: flex;
 	flex-direction: column;
 	color: $mainColor;
-	@include adaptiv-font(18, 16);
+	// @include adaptiv-mp(18, 16, 'font-size');
+	@include adaptiv-mp(18, 16, 'font-size');
 	font-family: $fontFamily;
   position: relative;
-  min-width: 320px;
+  min-width: $minWidth + px;
   overflow-x: hidden;
   margin: 0;
 	height: 100%;

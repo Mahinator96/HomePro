@@ -1,9 +1,10 @@
-@import "__mixin.scss";
+@import "_function.scss";
+@import "_mixin.scss";
 @import "_var.scss";
 @import "fonts.scss";
 @import "_global.scss";
 
-@import "./block-header.scss";
+@import "./module/block-header.scss";
 
 
 @import "../html/module/header/header.scss";

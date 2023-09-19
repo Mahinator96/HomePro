@@ -3,13 +3,17 @@ $fontFamily: PlusJakartaSans, 'sans-serif';
 $fontSize: toRem(18);
 $mainColor: #545971;
 $darkColor: #171921;
+$bgColor: #142257;
+$bgColorSemi: #1f3584;
+$bgColorLight: #15B2F5;
+$white: #fff;
 
 $maxWidth: 1920;
 $minWidth: 320;
 
 $containerWidth: 1460;
 
-$pc: toRem($containerWidth);
-$tablet: toRem(991.98);
-$mobile: toRem(767.98);
-$mobileSmall: toRem(479.98);
+$pc: $containerWidth + px;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 479.98px;

@@ -1,0 +1,163 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;	
+	background-color: $bgColor;
+	z-index: 50;
+	// .header__container
+	&__container {
+		--width: 1540px;
+		--padding: 30px;
+		
+		display: grid;
+		grid-template-columns: toRem(170) 1fr toRem(170);
+		align-items: center;
+		gap: toRem(15);
+		max-width: calc(var(--width) + var(--padding) * 2);
+		min-height: toRem(80);
+		padding: toRem(10) var(--padding);
+
+	}
+	// .header__logo
+	&__logo {
+		position: relative;
+		z-index: 5;
+	}
+	// .header__menu
+	&__menu {
+		justify-self: center;
+	}
+	// .header__schedule
+	&__schedule {
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+		justify-self: end;
+		font-weight: 700;
+		color: $white;
+		line-height: 1.33; /* 24/18 */
+		// .header__schedule::before
+		&::before {
+			content: '';
+			flex: 0 0 toRem(12);
+			width: toRem(12);
+			height: toRem(12);
+			background-color: #FF5E5E;
+			border-radius: 50%;
+		}
+	}
+}
+	.menu {
+	// .menu__body
+	&__body {
+
+		@media (max-width: $mobile) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: $bgColorSemi;
+
+			&::before {
+				content: '';
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: toRem(80);
+				background-color: $bgColor;
+				z-index: 2;
+			}
+		}
+		
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: toRem(3);
+		@include adaptiv-mp(57, 15, 'column-gap', null, 768);
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		font-weight: 700;
+		color: $white;
+		line-height: 1.33; /* 24/18 */
+
+		// .menu__link:hover
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline; //TODO: Доделать hover для меню
+			}
+		}
+	}
+	// .menu__icon
+	&__icon {
+		color: #ffbcbc;
+	}
+}
+
+// Burger
+.icon-menu {
+	display: none;
+
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		
+		@media (any-hover: none) {
+			cursor: deffault;
+		}
+		// .icon-menu span,
+		// .icon-menu::before,
+		// .icon-menu::after
+		span,
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			width: 100%;
+			height: toRem(2);
+			background-color: #fff;
+			transition: all 0.3s ease 0s;
+		}
+		// .icon-menu span,
+		span {
+			top: calc(50% - toRem(1));
+		}
+		// .icon-menu::before
+		&::before {
+			top: 0;
+		}
+		// .icon-menu::after
+		&::after {
+			bottom: 0;
+		}
+		// .icon-menu.menu-open
+		&.menu-open {
+			// .icon-menu.menu-open span
+			span {
+				width: 0;
+			}
+			// .icon-menu.menu-open::before 
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			// .icon-menu.menu-open::after
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		} 
+	}
+}
