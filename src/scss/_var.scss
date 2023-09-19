@@ -1,9 +1,15 @@
-$fontFamily: Quicksand, 'sans-serif';
-$fontSize: 25px;
-$mainColor: #6A6E77;
-$darkColor: #1C1F25;
+$fontFamily: PlusJakartaSans, 'sans-serif';
+
+$fontSize: toRem(18);
+$mainColor: #545971;
+$darkColor: #171921;
 
 $maxWidth: 1920;
 $minWidth: 320;
-// $maxWidthContainer: 1920px;
-$containerPadding: 0;
+
+$containerWidth: 1460;
+
+$pc: toRem($containerWidth);
+$tablet: toRem(991.98);
+$mobile: toRem(767.98);
+$mobileSmall: toRem(479.98);

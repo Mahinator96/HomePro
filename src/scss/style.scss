@@ -1,8 +1,12 @@
-@import "_var.scss";
 @import "__mixin.scss";
+@import "_var.scss";
+@import "fonts.scss";
 @import "_global.scss";
 
-// @import "fonts.scss";
+@import "./block-header.scss";
+
 
 @import "../html/module/header/header.scss";
+
+@import "../html/module/footer/footer.scss";
 

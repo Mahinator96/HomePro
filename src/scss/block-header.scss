@@ -1,0 +1,55 @@
+// --------- .block-header ---------
+.block-header {
+	display: grid;
+	gap: toRem(24) toRem(20);
+	
+	// .block-header--center
+	&--center {
+		text-align: center;
+	}
+	// .block-header--inline
+	&--inline {
+		justify-content: space-between;
+		align-items: end;
+	}
+	// .block-header__title
+	&__title {
+		@include adaptiv-font(52, 24);
+		color: $darkColor;
+		font-weight: 700;
+		line-height: 1.23;
+		
+		// .block-header__title--big
+		&--big {
+			@include adaptiv-font(64, 32);
+		}
+		// .block-header__title--white
+		&--white {
+			color: white;
+		}
+	}
+	// .block-header__text
+	&__text {
+		
+		// .block-header__text p
+		p {
+			line-height: 1.55;
+		}
+	}
+}
+
+// Структура
+/* 
+	<div class="block-header">
+		<h2 class="block-header__title">
+			
+		</h2>
+
+		<div class="block-header__text">
+			<p>
+				
+			</p>
+		</div>
+	</div>
+*/
+// ---------------------------------------------------------------------------------------------------
