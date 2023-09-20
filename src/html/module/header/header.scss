@@ -19,6 +19,8 @@
 		padding: toRem(10) var(--padding);
 
 		@media (max-width: $mobile) {
+			--padding: 15px;
+
 			grid-template-columns: auto auto;
 			justify-content: space-between;
 			min-height: toRem(55);
