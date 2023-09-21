@@ -109,4 +109,8 @@ picture {
   max-width: calc(var(--width) + var(--padding) * 2);
   margin: 0 auto;
   padding: 0 var(--padding);
+
+	@media (max-width: $mobile) {
+		--padding: 24px;
+	}
 }

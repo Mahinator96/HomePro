@@ -20,7 +20,7 @@
   $maxWidth: $maxWidth - $minWidth;
 
 	@if ($minW) {
-		#{$value}: calc(#{$mobSize + $metrik} + #{$addSize} * ((100vw - #{$minW + $metrik}) / (#{$maxWidth} - #{$minW} + 320)));
+		#{$value}: calc(#{$mobSize + $metrik} + #{$addSize} * ((100vw - #{$minW + $metrik}) / (#{$maxWidth} - #{$minW} + #{$minWidth})));
 	} @else {
 		#{$value}: calc(#{$mobSize + $metrik} + #{$addSize} * ((100vw - #{$minWidth + $metrik}) / #{$maxWidth}));
 	}

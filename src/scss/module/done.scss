@@ -1,0 +1,43 @@
+.done {
+	// .done__items
+	&__items {
+		display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: toRem(3);
+		@include adaptiv-mp(40, 24, 'column-gap');
+	}
+	// .done__item
+	&__item {
+		position: relative;
+		@include adaptiv-mp(20, 14, 'font-size');
+		line-height: 1.6;
+		padding-left: toRem(32);
+		color: $bgColorLight;
+
+		@media (max-width: $mobileSmall) {
+			padding-left: toRem(24);
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			// inset: 0;
+			width: toRem(24);
+			height: toRem(24);
+			background-image: url('@img/icons/check-blue.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			transform: translateY(-50%);
+
+			@media (max-width: $mobileSmall) {
+				width: toRem(16);
+				height: toRem(16);
+			}
+		}
+	}
+}
+	

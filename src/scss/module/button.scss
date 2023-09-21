@@ -1,0 +1,78 @@
+.button {
+	display: inline-flex;
+	min-height: toRem(64);
+	align-items: center;
+	justify-content: center;
+	@include adaptiv-mp(24, 18, 'font-size');
+	font-weight: 700;
+	line-height: 1.33333333; /* 32/24 */
+	color: $white;
+	padding: toRem(8);
+	background-color: $bgColorLight;
+	border-radius: toRem(60);
+	transition: background-color 0.3s ease;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $bgColorLightHover;
+		}
+	}
+
+	@media (max-width: $tablet) {
+		min-height: toRem(56);
+	}
+
+	@media (max-width: $mobile) {
+		min-height: toRem(48);
+	}
+	// .button--white 
+	&--white {
+		background-color: $white;
+		color: $bgColorLight;
+	}
+	// .button--min 
+	&--min {
+		font-size: toRem(18);
+		min-height: toRem(48);
+	}
+	// .button--icon
+	&--icon {
+		// .button--icon span
+		span {
+			display: flex;
+			align-items: center;
+			@include adaptiv-mp(16, 12, 'gap');
+			@include adaptiv-mp(16, 12, 'padding-left');
+
+			// .button--icon span::after
+			&::after { //TODO:Добавить анимацию для иконки телефона (дребезжание)
+				content: '';
+				flex: 0 0 toRem(48);
+				width: toRem(48);
+				height: toRem(48);
+				background-color: $white;
+				background-image: url('@img/icons/phone.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				border-radius: 50%;
+
+				@media (max-width: $tablet) {
+					flex: 0 0 toRem(40);
+					width: toRem(40);
+					height: toRem(40);
+				}
+
+				@media (max-width: $mobile) {
+					flex: 0 0 toRem(32);
+					width: toRem(32);
+					height: toRem(32);
+					background-size: toRem(16);
+				}
+			}
+		}
+	}
+	// .button--fw
+	&--fw {
+		width: 100%;
+	}
+}
