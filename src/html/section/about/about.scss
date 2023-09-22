@@ -1,0 +1,119 @@
+.about {
+  @include adaptiv-mp(60, 30, "margin-top");
+  @include adaptiv-mp(60, 30, "margin-bottom");
+
+  // .about__container
+  &__container {
+    display: grid;
+    row-gap: toRem(30);
+
+    @media (min-width: $tablet) {
+      column-gap: toRem(20);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  // .about__block
+  &__block {
+    // .about__block-header
+    &-header {
+    }
+    // .about__block-title
+    &-title {
+      max-width: 10.711538em;
+
+      @media (max-width: $tablet) {
+        max-width: none;
+      }
+
+			@media (max-width: $mobileSmall) {
+				max-width: 10.711538em;
+			}
+    }
+  }
+
+  // .about__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: toRem(580);
+    @include adaptiv-mp(55, 30, "row-gap");
+    margin: 0 auto;
+
+    @media (max-width: $tablet) {
+      max-width: none;
+    }
+  }
+  // .about__items
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiv-mp(32, 24, "row-gap");
+    column-gap: toRem(20);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: auto;
+    }
+  }
+  // .about__item
+  &__item {
+    color: $bgColorSemi;
+    @include adaptiv-mp(20, 16, "font-size");
+    font-weight: 700;
+    line-height: 1.4; // 28/24
+
+    padding-left: toRem(25);
+    background-image: url("@img/icons/check-dark.svg");
+    background-repeat: no-repeat;
+    background-position: 0 toRem(5);
+    // background-size: toRem(11) toRem(8);
+  }
+  // .about__info
+  &__info {
+    font-size: toRem(18);
+    line-height: 1.55555556; /* 28/18 */
+    color: $white;
+    max-width: 25em;
+    padding-top: toRem(12);
+    padding-bottom: toRem(12);
+    @include adaptiv-mp(32, 24, "padding-left");
+    @include adaptiv-mp(32, 24, "padding-right");
+    @include adaptiv-mp(24, 12, "border-radius");
+    background-color: $bgColorLight;
+    // .about__info a
+    a {
+      @include adaptiv-mp(20, 18, "font-size");
+      font-weight: 600;
+      line-height: 1.4; // 28/24
+      white-space: nowrap;
+      text-decoration: underline;
+    }
+  }
+  // .about__image
+  &__image {
+		
+
+    @media (max-width: $tablet) {
+			width: auto;
+      order: -1;
+    }
+  }
+
+	img {
+		max-width: toRem(712);
+		max-height: toRem(700);
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+}
+.container {
+}
+.block-header {
+  // .block-header__title
+  &__title {
+  }
+  // .block-header__text
+  &__text {
+  }
+}

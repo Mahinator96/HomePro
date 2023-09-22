@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HomePro</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>HomePro</title>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/home.css">
-	</head>
+  <body>
+    <div class="body-wrapper">
+      <!-- @@include('html/module/header/header.html') -->
 
-<body>
-	
-  <div class="body-wrapper">
-		@@include('html/module/header/header.html')
+      <main class="page">
+        <!-- @@include('html/section/hero/hero.html') -->
+        @@include('html/section/about/about.html')
+      </main>
 
-		<main class="page">
+      @@include('html/module/footer/footer.html')
+    </div>
 
-			@@include('html/section/hero/hero.html')
-
-		</main>
-
-		@@include('html/module/footer/footer.html')
-  </div>
-
-  <script src="js/app.min.js"></script>
-</body>
+    <script src="js/app.min.js"></script>
+  </body>
 </html>

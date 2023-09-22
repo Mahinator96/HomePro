@@ -1,7 +1,8 @@
 // --------- .block-header ---------
 .block-header {
 	display: grid;
-	gap: toRem(24) toRem(20);
+	column-gap: toRem(20);
+	@include adaptiv-mp(24, 12, 'row-gap');
 	
 	// .block-header--center
 	&--center {

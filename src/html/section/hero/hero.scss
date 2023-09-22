@@ -12,6 +12,7 @@
 	padding-left: toRem(24);
 	padding-right: toRem(24);
 	@include adaptiv-mp(60, 50, 'padding-bottom');
+	@include adaptiv-mp(60, 30, 'margin-bottom');
 	
 	@media (min-width: $tablet) {
 		display: grid;
@@ -25,13 +26,17 @@
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: 0;
+		bottom: -1px;
 		@include adaptiv-mp(480, 80, 'width');
 		@include adaptiv-mp(45, 30, 'height');
-		background-image: url('@img/icons/Decoration.svg');
+		background-image: url('@img/hero/icons/Decoration.svg');
 		background-repeat: no-repeat;
 		background-position: right bottom;
 		background-size: cover;
+
+		@media (max-width: $tablet) {
+			background-image: url('@img/hero/icons/Decoration-mobile.svg');
+		}
 	}
 
 	&::before {
