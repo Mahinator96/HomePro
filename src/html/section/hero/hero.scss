@@ -7,10 +7,9 @@
 	justify-content: center;
 	min-height: 100vh;
 	background-color: $bgColor;
-	padding: toRem(80) toRem(24) 0;
 	padding-top: toRem(80);
-	padding-left: toRem(24);
-	padding-right: toRem(24);
+	padding-left: toRem(12);
+	padding-right: toRem(12);
 	@include adaptiv-mp(60, 50, 'padding-bottom');
 	@include adaptiv-mp(60, 30, 'margin-bottom');
 	
@@ -140,7 +139,7 @@
   gap: toRem(14);
 
 	@media (max-width: $tablet) {
-		gap: toRem(8);
+		gap: 0;
 	}
 
   // .items-hero__item

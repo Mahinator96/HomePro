@@ -6,6 +6,10 @@
     align-items: center;
     row-gap: toRem(3);
 		@include adaptiv-mp(40, 24, 'column-gap');
+
+		@media (max-width: $mobileSmall) {
+			flex-direction: column;
+		}
 	}
 	// .done__item
 	&__item {

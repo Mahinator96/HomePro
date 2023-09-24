@@ -22,7 +22,7 @@
 		
 		// .block-header__title--big
 		&--big {
-			@include adaptiv-mp(64, 32, 'font-size');
+			@include adaptiv-mp(64, 30, 'font-size');
 		}
 		// .block-header__title--white
 		&--white {
