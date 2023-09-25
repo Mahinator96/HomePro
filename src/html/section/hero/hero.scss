@@ -99,6 +99,10 @@
     align-items: center;
     justify-content: center;
 		margin: 0 auto;
+
+		@media (max-width: $tablet) {
+			flex-grow: 0;
+		}
   }
   // .hero__main
   &__main {

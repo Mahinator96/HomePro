@@ -126,69 +126,14 @@
 				text-decoration: underline; //TODO: Доделать hover для меню
 			}
 		}
+    // .menu__link--active
+		&--active {
+			text-decoration: underline;
+			background-color: red;
+		}
 	}
 	// .menu__icon
 	&__icon {
 		color: #ffbcbc;
-	}
-}
-
-// Burger
-.icon-menu {
-	display: none;
-
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: toRem(30);
-		height: toRem(18);
-		z-index: 5;
-		
-		@media (any-hover: none) {
-			cursor: deffault;
-		}
-		// .icon-menu span,
-		// .icon-menu::before,
-		// .icon-menu::after
-		span,
-		&::before,
-		&::after {
-			content: '';
-			position: absolute;
-			right: 0;
-			width: 100%;
-			height: toRem(2);
-			background-color: #fff;
-			transition: all 0.3s ease 0s;
-		}
-		// .icon-menu span,
-		span {
-			top: calc(50% - toRem(1));
-		}
-		// .icon-menu::before
-		&::before {
-			top: 0;
-		}
-		// .icon-menu::after
-		&::after {
-			bottom: 0;
-		}
-		// .icon-menu.menu-open
-		&.menu-open {
-			// .icon-menu.menu-open span
-			span {
-				width: 0;
-			}
-			// .icon-menu.menu-open::before 
-			&::before {
-				top: calc(50% - toRem(1));
-				transform: rotate(-45deg);
-			}
-			// .icon-menu.menu-open::after
-			&::after {
-				bottom: calc(50% - toRem(1));
-				transform: rotate(45deg);
-			}
-		} 
 	}
 }

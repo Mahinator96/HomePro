@@ -1,13 +1,15 @@
 html {
 	height: 100%;
   box-sizing: border-box;
+	// scroll-behavior: smooth;
 }
 * {
   box-sizing: inherit;
+	scroll-behavior: smooth;
 }
 body{
-	display: flex;
-	flex-direction: column;
+	// display: flex; // FullPage
+	// flex-direction: column; // FullPage
 	color: $mainColor;
 	// @include adaptiv-mp(18, 16, 'font-size');
 	@include adaptiv-mp(18, 16, 'font-size');
@@ -16,14 +18,14 @@ body{
   min-width: $minWidth + px;
   overflow-x: hidden;
   margin: 0;
-	height: 100%;
+	// height: 100%;
 
   &._lock {
     overflow: hidden;
 
 		// body._lock .body-wrapper
 		.body-wrapper {
-			overflow: hidden;
+			overflow-x: hidden;
 		}
   }
 }
@@ -32,7 +34,7 @@ body{
   flex-direction: column;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  // height: 100vh; // FullPage
   overflow-x: hidden;
 }
 main {
@@ -91,6 +93,10 @@ picture {
 		height: 100%;
 	}
 }
+section {
+	@include adaptiv-mp(60, 30, 'padding-top');
+	@include adaptiv-mp(60, 30, 'padding-bottom');
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -104,7 +110,7 @@ picture {
   overflow: hidden;
 }
 .container {
-	--width: 1400px;
+	--width: 1380px;
   --padding: 30px;
   max-width: calc(var(--width) + var(--padding) * 2);
   margin: 0 auto;
