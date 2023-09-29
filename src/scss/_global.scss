@@ -95,7 +95,8 @@ picture {
 }
 section {
 	@include adaptiv-mp(60, 30, 'padding-top');
-	@include adaptiv-mp(60, 30, 'padding-bottom');
+	@include adaptiv-mp(60, 30, 'margin-bottom');
+	scroll-margin: toRem(50);
 }
 .visually-hidden {
   position: absolute;
@@ -118,5 +119,16 @@ section {
 
 	@media (max-width: $mobile) {
 		--padding: 12px;
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+		transform: translateY(toRem(100))
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(toRem(0))
 	}
 }

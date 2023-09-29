@@ -43,10 +43,12 @@
   }
   // .about__items
   &__items {
+		position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     @include adaptiv-mp(32, 24, "row-gap");
     column-gap: toRem(20);
+		overflow: hidden;
 
     @media (max-width: $tablet) {
       grid-template-columns: auto;
@@ -58,11 +60,25 @@
     @include adaptiv-mp(20, 16, "font-size");
     font-weight: 700;
     line-height: 1.4; // 28/24
-
     padding-left: toRem(25);
     background-image: url("@img/icons/check-dark.svg");
     background-repeat: no-repeat;
     background-position: 0 toRem(5);
+		opacity: 0;
+
+		@for $i from 1 through 6 {
+			&:nth-child(#{$i}) {
+				$delay: $i * 0.15;
+				animation-delay: #{$delay}s;
+			}
+		}
+
+		&.show {
+			animation-name: show;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+		}
+
     // background-size: toRem(11) toRem(8);
   }
   // .about__info
