@@ -53,6 +53,22 @@
     @media (max-width: $tablet) {
       grid-template-columns: auto;
     }
+
+		&.show {
+			// .about__item
+			.about__item {
+				@for $i from 1 through 6 {
+					&:nth-child(#{$i}) {
+						$delay: $i * 0.15;
+						animation-delay: #{$delay}s;
+					}
+				}
+
+				animation-name: show;
+				animation-duration: 1s;
+				animation-fill-mode: forwards;
+			}
+		}
   }
   // .about__item
   &__item {
@@ -65,20 +81,6 @@
     background-repeat: no-repeat;
     background-position: 0 toRem(5);
 		opacity: 0;
-
-		@for $i from 1 through 6 {
-			&:nth-child(#{$i}) {
-				$delay: $i * 0.15;
-				animation-delay: #{$delay}s;
-			}
-		}
-
-		&.show {
-			animation-name: show;
-			animation-duration: 1s;
-			animation-fill-mode: forwards;
-		}
-
     // background-size: toRem(11) toRem(8);
   }
   // .about__info

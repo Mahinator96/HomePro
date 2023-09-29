@@ -48,6 +48,7 @@
 		font-weight: 700;
 		line-height: 1.23;
 		opacity: 0;
+		// opacity: 1;
 		overflow: hidden;
 		
 		// .block-header__title--big
@@ -78,9 +79,11 @@
 // Структура
 /* 
 	<div class="block-header">
-		<h2 class="block-header__title">
-			
-		</h2>
+		<div class="block-header__top">
+			<h2 class="block-header__title">
+				
+			</h2>
+		</div>
 
 		<div class="block-header__text">
 			<p>

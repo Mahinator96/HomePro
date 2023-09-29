@@ -61,6 +61,29 @@ ol {
 	padding: 0;
   margin: 0;
 }
+
+// Счётчик для ul, ol
+
+// .list-counter
+.list-counter {
+	list-style-type: none;
+	counter-reset: item;
+	
+	// .list-counter li
+	li {
+		position: relative;
+
+		// .list-counter li::before
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			counter-increment: item;
+			content: counter(item) '.';
+		}
+	}
+}
+
 img {
   object-fit: cover;
 }
