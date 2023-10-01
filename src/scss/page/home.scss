@@ -3,9 +3,12 @@
 @import "../_mixin.scss";
 
 @import "../module/done.scss";
+@import "../../js/modules/swiper/swiper.base.scss";
+@import "../../js/modules/star-raiting/star-raiting.scss";
 
 @import "../../html/section/hero/hero.scss";
 @import "../../html/section/about/about.scss";
 @import "../../html/section/services/services.scss";
 @import "../../html/section/advantages/advantages.scss";
 @import "../../html/section/how/how.scss";
+@import "../../html/section/reviews/reviews.scss";
