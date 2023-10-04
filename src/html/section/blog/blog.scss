@@ -1,0 +1,127 @@
+.blog {
+	// .blog__container
+	&__container {
+		display: grid;
+		@include adaptiv-mp(56, 32, 'gap');
+	}
+	// .blog__items
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(toRem(350), 1fr));
+		@include adaptiv-mp(40, 32, 'gap');
+
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(auto-fit, minmax(toRem(300), 1fr));
+		}
+	}
+	// .blog__item
+	&__item {
+	}
+	// .blog__view-more
+	&__view-more {
+		position: relative;
+		justify-self: center;
+		color: $bgColorLight;
+		@include adaptiv-mp(24, 18, 'font-size');
+		font-weight: 700;
+		line-height: 1.33; /* 133.333% */
+		width: fit-content;
+		padding-right: toRem(28);
+
+		&::after {
+			content: '';
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			background-image: url('@img/blog/arrow-more.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			// background-size: contain;
+		}
+	}
+	}
+	.container {
+	}
+	.blog-header {
+
+		// .blog-header .blog-header__text
+		.block-header__text {
+			@include adaptiv-mp(24, 18, 'font-size');
+			line-height: 1.5;
+			max-width: 28.9583em; /* 695/18 */
+		}
+	}
+	
+.item-blog {
+	display: grid;
+	@include adaptiv-mp(24, 16, 'gap');
+	// .item-blog__image
+	&__image {
+		width: 100%;
+		aspect-ratio: 444 / 300;
+		border-radius: toRem(24);
+		overflow: hidden;
+    // .item-blog__image img
+		img {
+			transition: 0.5s ease;
+
+			@media (any-hover: hover) {
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+	// .item-blog__body
+	&__body {
+		display: grid;
+		@include adaptiv-mp(16, 12, 'gap');
+	}
+	// .item-blog__date
+	&__date {
+		line-height: 1.55;
+	}
+	// .item-blog__title
+	&__title {
+		color: $darkColor;
+		@include adaptiv-mp(32, 20, 'font-size');
+		font-weight: 700;
+		line-height: 1.25; /* 125% */
+	}
+	// .item-blog__link-title
+	&__link-title {
+	}
+	// .item-blog__text
+	&__text {
+		display: grid;
+		gap: toRem(10);
+		line-height: 1.55;
+	}
+	// .item-blog__tags
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(8) toRem(12);
+	}
+	// .item-blog__tag
+	&__tag {
+		font-size: toRem(14);
+		font-weight: 600;
+		line-height: 1.428; /* 142.857% */
+		padding: 8px 16px;
+		background-color: #F3F5F9;
+		border-radius: toRem(19);
+		transition: 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $bgColorLight;
+				color: $white;
+			}
+		}
+	}
+}
+	

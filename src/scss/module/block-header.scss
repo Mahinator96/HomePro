@@ -26,6 +26,11 @@
 	// .block-header--center
 	&--center {
 		text-align: center;
+		margin: 0 auto;
+
+		.block-header__text {
+			justify-self: center;
+		}
 	}
 	// .block-header--inline
 	&--inline {
@@ -62,7 +67,10 @@
 	}
 	// .block-header__text
 	&__text {
-		max-width: 34.16em;
+		display: grid;
+		gap: toRem(10);
+
+		// max-width: 34.16em;
 		overflow: hidden;
 		
 		// .block-header__text p
@@ -70,8 +78,14 @@
 			opacity: 0;
       position: relative;
 			line-height: 1.55;
-
-
+		}
+		// .block-header__text a
+		a {
+			color: $bgColorLight;
+			@include adaptiv-mp(24, 18, 'font-size');
+			font-weight: 700;
+			line-height: 1.33;
+			text-decoration-line: underline;
 		}
 	}
 }

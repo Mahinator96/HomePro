@@ -14,7 +14,6 @@ const animationCollback = (entries, observer) => {
 	entries.forEach(entry => {
 		const animBlock = entry.target;
 		const nameAnim = animBlock.dataset.anim;
-		console.log(animBlock);
 		
 		if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
 			entry.target.classList.add(nameAnim);

@@ -5,15 +5,14 @@ import './modules/dynamic-adaptiv.js';
 // Расскоментировать если нужен бургер
 // import './modules/burger.js';
 
-// Расскоментировать для плавной навигации header при клике (Структура в файле js)
-// import './modules/header-scroll-to-click.js';
-
-// Расскоментировать для плавной навигации header при скролле (Структура в файле js)
-// import './modules/header-scroll-to-scroll.js';
+// Спойлеры (аккардеоны)
+	import './modules/spollers/spollers-fls.js'; // (не знаю как сделать семантичным, но есть плюшки с breakpoint)
 
 // Подключение swiper. Добавить css !
-
 import './modules/swiper/slider.js'
+
+// Ф-я обрезки до указанного символа (Добавить в файл где нужна ф-я)
+import './modules/substring.js'
 
 // Звёздный рейтинг. Добавить css !
   // Статичный рейтинг
@@ -37,3 +36,4 @@ import './modules/swiper/slider.js'
 	// Расскаментировать для бесконечного скролла
 	// import './modules/observer/infinity-scroll.js';
 // FIXME:изменить функционал при клике на мобилке в меню (чтобы закрывалось и скролилось)
+
