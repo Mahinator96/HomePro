@@ -1,0 +1,80 @@
+.talk {
+	position: relative;
+	background-color: $bgColor;
+	// .talk__container
+	&__container {
+		// display: grid;
+		// grid-template-columns: repeat(2, 1fr)
+	}
+	// .talk__content
+	&__content {
+		@include adaptiv-mp(165, 56, 'padding-top');
+		padding-bottom: toRem(105);
+
+		@media (max-width: $mobile) {
+			display: grid;
+			justify-content: center;
+			padding-bottom: toRem(10);
+		}
+
+		// .talk__content::before
+		&::before {
+			content: '';
+			position: absolute;
+			// top: toRem(-13);
+			top: 0;
+			left: 11.4%;
+			// width: toRem(581);
+			@include adaptiv-mp(581, 200, 'width');
+			height: toRem(45);
+			background-image: url('@img/talk/decor.svg');
+			background-repeat: no-repeat;
+			background-position: top center;
+			@include adaptiv-mp(581, 200, 'background-size');
+
+			@media (max-width: $mobile) {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+	// .talk__button
+	&__button {
+		width: fit-content;
+
+		@media (max-width: $mobile) {
+			margin: 0 auto;
+		}
+	}
+	// .talk__image
+	&__image {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 50.3125%;
+
+		@media (max-width: $mobile) {
+			position: relative;
+			width: 100vw;
+		}
+	}
+	}
+	.talk-header {
+	// .talk-header__title
+	&__title {
+		@include adaptiv-mp(64, 24, 'font-size');
+		max-width: 10.34375em;
+		margin-bottom: toRem(24);
+
+		@media (max-width: $mobile) {
+			text-align: center;
+		}
+	}
+}
+.talk-done__list {
+	@include adaptiv-mp(36, 24, 'margin-bottom');
+
+	@media (max-width: $mobile) {
+		justify-content: center;
+	}
+}
