@@ -14,7 +14,7 @@
 	const activeClass = 'active';																// Активный класс ссылки-якоря
 	const classMenuItem = '.menu__link'; 												// Класс ссылки-якоря
 	
-	const sectionThrashold = [0.3, 0.8]; 									      // Видимость элемента при которой срабатывает anchorMenuCollback
+	const sectionThrashold = [0.4, 0.8]; 									      // Видимость элемента при которой срабатывает anchorMenuCollback
 	const rootSectionMargin = '';
 	
 	const sections = document.querySelectorAll(anchorSection); 	// Все секции-якоря
@@ -25,7 +25,7 @@
 			const activeId = entry.target.id;																										 // id текущего блока
 			const activeLink = document.querySelector(`a${classMenuItem}[href="#${activeId}"`);	 // ссылка-якорь текущего id блока
 
-			if (entry.isIntersecting && (entry.intersectionRatio >= 0.3 || entry.intersectionRatio <= 0.8) ) { 												// Если секция видна и она видна больше чем на 50%
+			if (entry.isIntersecting && (entry.intersectionRatio >= sectionThrashold[0] || entry.intersectionRatio <= sectionThrashold[1]) ) { 												// Если секция видна и она видна больше чем на 50%
 				// links.forEach(link => link.classList.remove(activeClass));  												// Убрать у всех ссылок-якорей
 				const linksActive = document.querySelectorAll(`${classMenuItem}.${activeClass}`);
 

@@ -3,7 +3,7 @@ import './modules/isWebp.js';
 // Расскоментировать, если нужен динамический адаптив
 import './modules/dynamic-adaptiv.js';
 // Расскоментировать если нужен бургер
-// import './modules/burger.js';
+import './modules/burger.js';
 
 // Спойлеры (аккардеоны)
 	import './modules/spollers/spollers-fls.js'; // (не знаю как сделать семантичным, но есть плюшки с breakpoint)
